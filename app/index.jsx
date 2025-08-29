@@ -5,6 +5,8 @@ import Logo from '../assets/img/logo.jpeg'
 
 const Home = () => {
   return (
+
+    
     <View style={styles.container}>
         <Image source={Logo} style={styles.img}/>
 
