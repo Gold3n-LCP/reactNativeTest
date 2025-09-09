@@ -1,0 +1,23 @@
+import { View, StyleSheet, useColorScheme } from 'react-native'
+import { Colors } from '../constants/Colors'
+import React from 'react'
+
+const ThemedCard = ({style, ...props}) => {
+    const colorScheme = useColorScheme()
+    const theme = Colors[colorScheme] ?? Colors.light
+  return (
+    <View
+    style={[{ backgroundColor: theme.uiBackground}, styles.card, style]}
+    {...props}
+    />
+  )
+}
+
+export default ThemedCard
+
+const stypes = StyleSheet.create({
+    card: {
+        borderRadius: 5,
+        padding: 20
+    }
+})

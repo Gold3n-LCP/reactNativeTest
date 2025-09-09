@@ -1,25 +1,43 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
-import Logo from '../assets/img/logo.jpeg'
 
+// themed components
+import ThemedView from '../components/ThemedView'
+import ThemedLogo from '../components/ThemedLogo'
+import ThemedText from '../components/ThemedText'
+import Spacer from '../components/Spacer'
 const Home = () => {
   return (
 
-    
-    <View style={styles.container}>
-        <Image source={Logo} style={styles.img}/>
+    <ThemedView style={styles.container}>
 
-        <Text style={styles.title}>The Number 1</Text>
+        <ThemedLogo style={styles.img}/>
+        <Spacer height={20} />
+
+        <ThemedText style={styles.title} title={true}>
+            The Number 1
+        </ThemedText>
       
-        <Text style={{ marginTop: 10, marginBottom: 30}}>
-            Reading List App
-        </Text>
+        <Spacer height={20} />
+        <ThemedText>Reading List App</ThemedText>
+        <Spacer />
 
-        <Link href="about" style={styles.link}>About Page</Link>
-        <Link href="contact" style={styles.link}>Contact Page</Link>
+        <Link href="about" style={styles.link}>
+            <ThemedText>About Page</ThemedText>
+        </Link>
+        <Link href="contact" style={styles.link}>
+            <ThemedText>Contact Page</ThemedText>
+        </Link>
+
+        <Link href="/login" style={styles.link}>
+            <ThemedText>LOGIN Page</ThemedText>
+        </Link>
+        <Link href="/register" style={styles.link}>
+            <ThemedText>REGISTER Page</ThemedText>
+        </Link>
         
-    </View>
+    </ThemedView>
   )
 }
 
@@ -37,12 +55,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
 
     },
-    
     img: {
-        marginVertical: 20,
         height: 100,
-        width: 100,
-
+        width: 150
     },
     link: {
         marginVertical: 10,
